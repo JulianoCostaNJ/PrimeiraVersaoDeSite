@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interatividade e Animação CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <header class="header">
+            <h1>Experiência Interativa</h1>
+            <p>Passe o mouse nos cartões para descobrir detalhes ocultos.</p>
+        </header>
+
+        <section class="card-grid">
+            <article class="card">
+                <div class="card-content">
+                    <h3>Design Minimalista</h3>
+                    <p class="summary">Foco no essencial.</p>
+                    <div class="details">
+                        <p>O minimalismo reduz a carga cognitiva, permitindo que o usuário encontre o que precisa rapidamente.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-content">
+                    <h3>Micro-interações</h3>
+                    <p class="summary">Feedback visual imediato.</p>
+                    <div class="details">
+                        <p>Pequenas animações confirmam ações do usuário e tornam a interface mais humana e responsiva.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-content">
+                    <h3>Performance</h3>
+                    <p class="summary">Fluidez e velocidade.</p>
+                    <div class="details">
+                        <p>Animações otimizadas (usando transform e opacity) garantem 60 FPS e uma navegação sem travamentos.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="action-area">
+            <input type="checkbox" id="botao">
+                <label for="botao" class="btn-main">Clique Aqui</label>
+        </section>
+    </main>
+</body>
+</html>

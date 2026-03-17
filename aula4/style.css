@@ -1,0 +1,137 @@
+/* Variáveis de Cores e Configurações */
+:root {
+    --bg-gradient-1: #f0f4f8;
+    --bg-gradient-2: #d9e2ec;
+    --bg-gradient-3: #bcccdc;
+    --primary-color: #486581;
+    --accent-color: #627d98;
+    --text-color: #243b53;
+    --card-bg: #ffffff;
+    --transition-speed: 0.4s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    
+    /* Animação de Fundo */
+    background: linear-gradient(45deg, var(--bg-gradient-1), var(--bg-gradient-2), var(--bg-gradient-3));
+    background-size: 400% 400%;
+    animation: gradientBG 2s ease infinite;
+}
+
+/* Keyframes para o Fundo Animado */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    max-width: 1000px;
+    width: 90%;
+    text-align: center;
+    padding: 2rem;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.header p {
+    margin-bottom: 3rem;
+    opacity: 0.8;
+}
+
+/* Grid de Cartões */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Estilização e Animação dos Cartões */
+.card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    
+    /* Transição suave para scale e shadow */
+    transition: transform var(--transition-speed) ease, 
+                box-shadow var(--transition-speed) ease;
+}
+
+.card:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* Controle da Descrição Oculta */
+.details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    margin-top: 0;
+}
+
+.card:hover .details {
+    max-height: 200px; /* Valor suficiente para o texto */
+    opacity: 1;
+    margin-top: 1rem;
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.summary {
+    font-weight: 500;
+    color: var(--accent-color);
+}
+
+/* Botão com Efeito de Elevação */
+input{
+    display: none;
+}
+.btn-main {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.btn-main:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+/* cor quando clicado */
+input:checked + .btn-main{
+  background-color: #e74c3c;
+}
